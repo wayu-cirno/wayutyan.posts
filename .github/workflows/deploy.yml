@@ -29,12 +29,17 @@ jobs:
           path: template
 
       - name: Copy content
-  run: |
-    rm -rf template/src/content/pages
-    mkdir -p template/src/content/pages
+        run: |
+          rm -rf template/src/content/pages
+          mkdir -p template/src/content/pages
 
-    find content -mindepth 1 -maxdepth 1 -type d \
-      -exec cp -r {} template/src/content/pages/ \;
+          find content -mindepth 1 -maxdepth 1 -type d \
+            -exec cp -r {} template/src/content/pages/ \;
+
+      - name: Build Astro
+        uses: withastro/action@v6
+        with:
+          path: template
 
   deploy:
     needs: build
