@@ -48,11 +48,6 @@ jobs:
         with:
           path: template
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: template/dist
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
