@@ -43,6 +43,10 @@ jobs:
             cp content/index.mdx template/src/content/pages/index.mdx
           fi
 
+          if [ -f content/index.yml ]; then
+            cp content/index.yml template/src/content/pages/index.yml
+          fi
+
       - name: Build Astro
         uses: withastro/action@v6
         with:
