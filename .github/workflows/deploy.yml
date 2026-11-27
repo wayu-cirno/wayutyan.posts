@@ -44,7 +44,9 @@ jobs:
           fi
 
           if [ -f content/index.yml ]; then
-            cp content/index.yml template/src/content/pages/index.yml
+            mkdir -p template/src/data
+            cp content/index.yml template/src/data/index.yml
+            ruby -ryaml -rjson -e 'puts JSON.generate(YAML.safe_load_file(ARGV[0]))' content/index.yml > template/src/data/index.json
           fi
 
       - name: Build Astro
