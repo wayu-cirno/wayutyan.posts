@@ -5,5 +5,5 @@ menu:
     url: "/"
   - title: "日常系"
     url: "/日常系/"
-  - title: "問い合わせ"
-    url: "/social.mdx"
+  - title: "ソーシャル"
+    url: "/social/"
